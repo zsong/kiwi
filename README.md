@@ -28,7 +28,7 @@ console.log(result);
 
 ```javascript
 
-var input = "The % is 50'%.";
+var input = "The % is 50`%.";
 var result = Kiwi.compose(input, ["chance"]);
 console.log(result);
 
