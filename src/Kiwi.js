@@ -43,7 +43,7 @@ var Kiwi = (function ($) {
 		}
 
 		if(text[i] === '}') key += '}';
-		else throw Error("Syntax error.");
+		else throw Error("SYNTAX ERROR");
 
 		return [key.slice(2, key.length - 1), key.length];
 	} 
