@@ -63,7 +63,7 @@ describe('Kiwi.compose - %{}', function() {
 	it('should throw a syntax error.',function() {
 		var input = "The quick brown %{f jumps over the lazy dog.";
 		var dic = {"f": "fox", "d": "dog"};
-		expect(function(){Kiwi.compose(input, dic)}).toThrow(Error("Syntax error."));
+		expect(function(){Kiwi.compose(input, dic)}).toThrow(Error("SYNTAX ERROR"));
 	});
 
 	it('should ignore when the variable is not available',function() {
