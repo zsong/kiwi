@@ -1,4 +1,9 @@
 describe('Kiwi.compose', function() {
+    it('should return the empty when input is empty',function() {
+        var input = "";
+        expect(Kiwi.compose(input)).toEqual(input);
+    });
+
     it('should return the input string',function() {
         var input = "text without interpolation";
         expect(Kiwi.compose(input)).toEqual(input);
