@@ -45,7 +45,7 @@ describe('Kiwi.compose', function() {
         expect(Kiwi.compose(input, ["rate"])).toEqual(result);
     });
 
-    it('should add empty string when size of the array is larger than the placeholders.', function() {
+    it('should use an empty string when size of the array less fits the placeholders.', function() {
         var input = "The quick brown % jumps % the lazy %.";
         var result = "The quick brown fox jumps over the lazy .";
         expect(Kiwi.compose(input, ["fox", "over"])).toEqual(result);
