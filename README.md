@@ -10,6 +10,7 @@ Example
 
 ```javascript
 Kiwi.compose(<input_string>, <array of the strings to interpolate>);
+Kiwi.compose(<input_string>, <json object>);
 ```
 
  * Use **% (percentage symbol)** as the place holder.
@@ -24,7 +25,7 @@ console.log(result);
 
 ```
  
- * Use **` (Grave accent symbol)** to escape the % symbol.
+ * Use **` (grave accent symbol)** to escape the % symbol.
 
 ```javascript
 
@@ -36,13 +37,13 @@ console.log(result);
 
 ```
 
- * You can also do key-value interpolate like this
+ * You can also do key-value interpolation like this
 
 ```javascript
 
 var input = "The quick brown %{f} jumps over the lazy %{d}.";
-var data = {"f": "fox", "d": "dog"};
-var result = Kiwi.compose(input, data);
+var data_obj = {"f": "fox", "d": "dog"};
+var result = Kiwi.compose(input, data_obj);
 console.log(result);
 
 //Output: The quick brown fox jumps over the lazy dog.
