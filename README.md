@@ -1,7 +1,7 @@
 Kiwi
 ====
 
-Kiwi is a javascript module which can do string interpolation.
+Kiwi is a light-weight JavaScript module for string interpolation.
 
 Example
 ===
