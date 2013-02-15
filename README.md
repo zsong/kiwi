@@ -36,3 +36,17 @@ console.log(result);
 
 ```
 
+ * You can also do key-value interpolate like this
+
+```javascript
+
+var input = "The quick brown %{f} jumps over the lazy %{d}.";
+var data = {"f": "fox", "d": "dog"};
+var result = Kiwi.compose(input, data);
+console.log(result);
+
+//Output: The quick brown fox jumps over the lazy dog.
+
+SYNTAX ERROR will be thrown if the input string contains non-matching curly brackets.
+
+```
