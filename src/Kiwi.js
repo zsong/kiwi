@@ -1,6 +1,4 @@
 var Kiwi = (function ($) {
-	var TRANSPOSE_CHAR = '%';
-
 	var interpolate_general = function(text, array){
 		var stringToReturn = ""
 		 	,length = text.length
@@ -12,11 +10,11 @@ var Kiwi = (function ($) {
 			var nextChar = null;
 			if(i + 1 < length) nextChar = text[i+1];
 
-			if(currentChar === '`' && nextChar === TRANSPOSE_CHAR){
-				stringToReturn += TRANSPOSE_CHAR;
+			if(currentChar === '`' && nextChar === '%'){
+				stringToReturn += '%';
 				i += 1;
 			}else{
-				if(currentChar === TRANSPOSE_CHAR){
+				if(currentChar === '%'){
 					if(index < array_length){
 						stringToReturn += array[index++];
 					}else{
