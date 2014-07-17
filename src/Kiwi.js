@@ -1,9 +1,9 @@
 var Kiwi = (function ($) {
 	var interpolate_general = function(text, array){
 		var stringToReturn = ""
-		 	,length = text.length
-		 	,index = 0
-		 	,array_length = array.length;
+			,length = text.length
+			,index = 0
+			,array_length = array.length;
 
 		for(var i = 0; i < length; i++){
 			var currentChar = text[i];
@@ -48,15 +48,18 @@ var Kiwi = (function ($) {
 
 	var interpolate_key_value = function(text, json){
 		var stringToReturn = ""
-		 	,length = text.length
-		 	,index = 0;
+			,length = text.length
+			,index = 0;
 
 		for(var i = 0; i < length; i++){
 			var currentChar = text[i];
 			var nextChar = null;
 			if(i + 1 < length) nextChar = text[i+1];
 
-			if(currentChar === '%' && nextChar === '{'){
+			if (currentChar === '`' && nextChar === '%') {
+				stringToReturn += '%';
+				i += 1;
+			}else if(currentChar === '%' && nextChar === '{'){
 				var result = get_key_length(text, i);
 				var key = result[0];
 				var key_length = result[1];

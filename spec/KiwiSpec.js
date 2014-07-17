@@ -72,4 +72,18 @@ describe('Kiwi.compose - %{}', function() {
 		var output = "The quick brown  jumps over the lazy dog.";
 		expect(Kiwi.compose(input, dic)).toEqual(output);
 	});
+
+	it('should escape key value interpolation if ` is given before %',function() {
+		var input = "The quick brown `%{f} jumps over the lazy dog.";
+		var dic = {"d": "dog"};
+		var output = "The quick brown %{f} jumps over the lazy dog.";
+		expect(Kiwi.compose(input, dic)).toEqual(output);
+	});
+
+	it('should escape key value interpolation for the first case but not for the 2nd.',function() {
+		var input = "The quick brown `%{f} %{f} jumps over the lazy dog.";
+		var dic = {"f": "fox"};
+		var output = "The quick brown %{f} fox jumps over the lazy dog.";
+		expect(Kiwi.compose(input, dic)).toEqual(output);
+	});
 });
