@@ -51,3 +51,16 @@ console.log(result);
 SYNTAX ERROR will be thrown if the input string contains non-matching curly brackets.
 
 ```
+
+ * Use **` (grave accent symbol)** to escape key-value interpolation
+
+```javascript
+
+var input = "The quick brown `%{f} jumps over the lazy %{d}.";
+var data_obj = {"f": "fox", "d": "dog"};
+var result = Kiwi.compose(input, data_obj);
+console.log(result);
+
+//Output: The quick brown %{f} jumps over the lazy dog.
+
+```
